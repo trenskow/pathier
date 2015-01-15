@@ -82,6 +82,12 @@ describe('path', function() {
 	it ('should come back with the path', function() {
 		expect(path('/this/is/a/path/to/file.ext').path().full()).to.be.equal('/this/is/a/path/to');
 	});
+	it ('should come back with sub path', function() {
+		expect(path('/this/is/a/path').sub(1,2).full()).to.be.equal('this/is');
+	});
+	it ('should come back with sub path (unspecified length)', function() {
+		expect(path('/this/is/a/path').sub(1).full()).to.be.equal('this/is/a/path');
+	});
 	it ('should come back with file existing', function(done) {
 		path(__dirname).relative('../package.json').exists(function(exists) {
 			expect(exists).to.be.true;
