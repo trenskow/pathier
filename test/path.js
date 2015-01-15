@@ -2,6 +2,7 @@ var expect = require('chai').expect;
 var path = require('../lib/path.js');
 var os = require('os');
 var touch = require('touch');
+var tmp = path(os.tmpdir());
 
 describe('path', function() {
 	it ('should make instance of path', function() {
@@ -88,21 +89,26 @@ describe('path', function() {
 	it ('should come back with sub path (unspecified length)', function() {
 		expect(path('/this/is/a/path').sub(1).full()).to.be.equal('this/is/a/path');
 	});
-	it ('should come back with file existing', function(done) {
+	it ('should come back with file existing (async)', function(done) {
 		path(__dirname).relative('../package.json').exists(function(exists) {
 			expect(exists).to.be.true;
 			done();
 		});
 	});
-	it ('should come back with file non-existing', function(done) {
+	it ('should come back with file non-existing (async)', function(done) {
 		path(__dirname).relative('package.json').exists(function(exists) {
 			expect(exists).to.be.false;
 			done();
 		});
 	});
-	it ('should come back with newer and older', function(done) {
+	it ('should come back with file existing (sync)', function() {
+		expect(path(__dirname).relative('../package.json').exists()).to.be.true;
+	});
+	it ('should come back with file non-existing (async)', function() {
+		expect(path(__dirname).relative('package.json').exists()).to.be.false;
+	});
+	it ('should come back with newer than older (sync)', function(done) {
 		console.log('    [i] Next should take around 1.5 secs.')
-		var tmp = path(os.tmpdir());
 		var newest = tmp.join('path_newest');
 		var oldest = tmp.join('path_oldest');
 		touch(oldest.full(), function() {
@@ -111,14 +117,13 @@ describe('path', function() {
 					newest.newer(oldest, function(err, newer) {
 						expect(err).to.be.null;
 						expect(newer).to.be.to.true;
-						oldest.older(newest, function(err, older) {
-							expect(err).to.be.null;
-							expect(older).to.be.false;
-						});
 						done();
 					});
 				});
 			}, 1500);
 		});
+	});
+	it ('should come back with newer than older (async)', function() {
+		expect(tmp.join('path_newest').newer(tmp.join('path_oldest'))).to.be.true;
 	});
 });
