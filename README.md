@@ -33,7 +33,7 @@ A Javascript path tool.
     mypath.join(p)             // Returns a path with p appended to mypath.
                                // path('/this/is/').join('/a/path').full() == '/this/is/a/path'
     
-    mypath.relative(p)         // Returns a path with p relative to might.
+    mypath.relative(p)         // Returns a path with p relative to mypath.
                                // path('/this/is/').relative('a/path').full() == '/this/is/a/path'
                                // path('/this/is/').relative('/a/path).full() == '/a/path'
     

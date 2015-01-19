@@ -1,7 +1,7 @@
 {
 	"name": "pathier",
-	"version": "0.0.1",
-	"description": "A smarter node.js path",
+	"version": "0.0.2",
+	"description": "A smarter node.js path.",
 	"author": "Kristian Trenskow <trenskow@me.com>",
 	"main": "./index.js",
 	"devDependencies": {
@@ -14,7 +14,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"utl": "https://github.com/trenskow/pathier"
+		"url": "https://github.com/trenskow/pathier"
 	},
 	"keywords": [
 		"path"
