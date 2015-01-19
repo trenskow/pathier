@@ -95,20 +95,20 @@ describe('path', function() {
 			done();
 		});
 	});
+	it ('should come back with file existing (sync)', function() {
+		expect(path(__dirname).relative('../package.json').exists()).to.be.true;
+	});
 	it ('should come back with file non-existing (async)', function(done) {
 		path(__dirname).relative('package.json').exists(function(exists) {
 			expect(exists).to.be.false;
 			done();
 		});
 	});
-	it ('should come back with file existing (sync)', function() {
-		expect(path(__dirname).relative('../package.json').exists()).to.be.true;
-	});
-	it ('should come back with file non-existing (async)', function() {
+	it ('should come back with file non-existing (sync)', function() {
 		expect(path(__dirname).relative('package.json').exists()).to.be.false;
 	});
-	it ('should come back with newer than older (sync)', function(done) {
-		console.log('    [i] Next should take around 1.5 secs.')
+	it ('should come back with newer than older (async)', function(done) {
+		console.log('    [i] This test should take around 1.5 secs.')
 		var newest = tmp.join('path_newest');
 		var oldest = tmp.join('path_oldest');
 		touch(oldest.full(), function() {
@@ -123,7 +123,7 @@ describe('path', function() {
 			}, 1500);
 		});
 	});
-	it ('should come back with newer than older (async)', function() {
+	it ('should come back with newer than older (sync)', function() {
 		expect(tmp.join('path_newest').newer(tmp.join('path_oldest'))).to.be.true;
 	});
 });
