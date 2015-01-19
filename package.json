@@ -1,6 +1,6 @@
 {
 	"name": "pathier",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "A smarter node.js path.",
 	"author": "Kristian Trenskow <trenskow@me.com>",
 	"main": "./index.js",

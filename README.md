@@ -60,7 +60,7 @@ A Javascript path tool.
     mypath.stat()              // Returns the stat of path.
                                // Equivalent of fs.statSync.
     
-    mypath.newer(p)            // Returns true if p is newer than mypath.
+    mypath.newer(p)            // Returns true if mypath is newer than p.
     
 > Both `exists`, `stat` and `newer` works asynchronously if a callback is supplied.
 
