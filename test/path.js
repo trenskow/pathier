@@ -71,23 +71,32 @@ describe('path', function() {
 	it ('should come back as false', function() {
 		expect(path('/this/is/a/path').isIn('/this/is/another')).to.be.false;
 	});
-	it ('should come back with level 2', function() {
-		expect(path('/path/').level()).to.equal(2);
+	it ('should come back with level 4', function() {
+		expect(path('/this/is/a/path/').level()).to.equal(4);
 	});
-	it ('should come back with level 1', function() {
-		expect(path('/path').level()).to.equal(1);
+	it ('should come back with level 3', function() {
+		expect(path('/this/is/a/path/').level()).to.equal(4);
 	});
-	it ('should come back sliced', function() {
-		expect(path('/this/is/a/path').slice(2).full()).to.be.equal('is/a/path');
+	it ('should come back with level 0', function() {
+		expect(path('/path').level()).to.equal(0);
 	});
 	it ('should come back with the path', function() {
-		expect(path('/this/is/a/path/to/file.ext').path().full()).to.be.equal('/this/is/a/path/to');
+		expect(path('/this/is/a/path/to/file.ext').path().full()).to.be.equal('/this/is/a/path/to/');
+	});
+	it ('should come back with the relative path', function() {
+		expect(path('this/is/a/path/to/file.ext').path().full()).to.be.equal('this/is/a/path/to/');
 	});
 	it ('should come back with sub path', function() {
-		expect(path('/this/is/a/path').sub(1,2).full()).to.be.equal('this/is');
+		expect(path('/this/is/a/path').sub(1,2).full()).to.be.equal('/is/a/');
 	});
 	it ('should come back with sub path (unspecified length)', function() {
-		expect(path('/this/is/a/path').sub(1).full()).to.be.equal('this/is/a/path');
+		expect(path('/this/is/a/path').sub(1).full()).to.be.equal('/is/a/path');
+	});
+	it ('should come back with sub path (relative)', function() {
+		expect(path('this/is/a/path').sub(1).full()).to.be.equal('/is/a/path');
+	});
+	it ('should come back with full path', function() {
+		expect(path('/this/is/a/path').sub(0).full()).to.be.equal('/this/is/a/path');
 	});
 	it ('should come back with file existing (async)', function(done) {
 		path(__dirname).relative('../package.json').exists(function(exists) {
