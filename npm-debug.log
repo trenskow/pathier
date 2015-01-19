@@ -1,0 +1,96 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.1.17
+3 info using node@v0.10.35
+4 verbose node symlink /usr/local/bin/node
+5 verbose publish [ '.' ]
+6 silly cache add args [ '.', null ]
+7 verbose cache add spec .
+8 silly cache add parsed spec { raw: '.',
+8 silly cache add   scope: null,
+8 silly cache add   name: null,
+8 silly cache add   rawSpec: '.',
+8 silly cache add   spec: '/Users/trenskow/Desktop/appbreviate.com/app.risras.dk-admin/node_modules/pageflow/node_modules/pathier',
+8 silly cache add   type: 'directory' }
+9 verbose addLocalDirectory /Users/trenskow/.npm/pathier/0.0.2/package.tgz not in flight; packing
+10 verbose tar pack [ '/Users/trenskow/.npm/pathier/0.0.2/package.tgz',
+10 verbose tar pack   '/Users/trenskow/Desktop/appbreviate.com/app.risras.dk-admin/node_modules/pageflow/node_modules/pathier' ]
+11 verbose tarball /Users/trenskow/.npm/pathier/0.0.2/package.tgz
+12 verbose folder /Users/trenskow/Desktop/appbreviate.com/app.risras.dk-admin/node_modules/pageflow/node_modules/pathier
+13 info prepublish pathier@0.0.2
+14 verbose addLocalTarball adding from inside cache /Users/trenskow/.npm/pathier/0.0.2/package.tgz
+15 silly cache afterAdd pathier@0.0.2
+16 verbose afterAdd /Users/trenskow/.npm/pathier/0.0.2/package/package.json not in flight; writing
+17 verbose afterAdd /Users/trenskow/.npm/pathier/0.0.2/package/package.json written
+18 silly publish { name: 'pathier',
+18 silly publish   version: '0.0.2',
+18 silly publish   description: 'A smarter node.js path.',
+18 silly publish   author: { name: 'Kristian Trenskow', email: 'trenskow@me.com' },
+18 silly publish   main: './index.js',
+18 silly publish   devDependencies: { mocha: '>= 1.20.0', chai: '>= 1.9.1', touch: '~0.0.3' },
+18 silly publish   scripts: { test: './node_modules/mocha/bin/mocha ./test/*.js' },
+18 silly publish   repository: { type: 'git', url: 'https://github.com/trenskow/pathier' },
+18 silly publish   keywords: [ 'path' ],
+18 silly publish   license: 'BSD',
+18 silly publish   readme: '# pathier\n\nA Javascript path tool.\n\n## Usage\n\n### How to create\n\n    var path = require(\'pathier\');\n    \n    var mypath = path(\'/this/is/my/path\');\n    \n### How to use\n\n    mypath.full()              // Returns the path as a String.\n    \n    mypath.isAbsolute()        // Returns true if path is absolute.\n                               // path(\'/absolute/path\').isAbsolute() == true\n    \n    mypath.isRelative()        // Returns true if path is relative\n                               // Opposite of isAbsolute().\n    \n    mypath.isFile()            // Returns true if path has no trailing \'/\'.\n                               // path(\'/this/is/a/file\').isFile() == true\n                               // path(\'/this/is/a/directory/\').isFile() == false\n    \n    mypath.isDirectory()       // Returns true if path has trailing \'/\'.\n                               // Opposite of isFile().\n    \n    mypath.isIn(p)             // Returns true of mypath is within p.\n                               // path(\'/this/is/a/path\').isIn(\'/this/is\') == true\n    \n    mypath.join(p)             // Returns a path with p appended to mypath.\n                               // path(\'/this/is/\').join(\'/a/path\').full() == \'/this/is/a/path\'\n    \n    mypath.relative(p)         // Returns a path with p relative to mypath.\n                               // path(\'/this/is/\').relative(\'a/path\').full() == \'/this/is/a/path\'\n                               // path(\'/this/is/\').relative(\'/a/path).full() == \'/a/path\'\n    \n    mypath.path()              // Returns a new path with the path of mypath.\n                               // path(\'/this/is/a/file.ext\').path().full() == \'/this/is/a/\'\n    \n    mypath.name()              // Returns the filename base name without extension.\n                               // path(\'/this/is/a/file.ext\').base() == \'file\'\n    \n    mypath.ext()               // Returns the filename extension.\n                               // path(\'/this/is/a/file.ext\').ext() == \'ext\'\n    \n    mypath.level()             // Returns the depth of the path.\n                               // path(\'/this/is/a/path/\').level() == 4\n                               // path(\'/this/is/a/path\').level() == 3\n    \n    mypath.sub(start, [level]) // Return a subpath.\n                               // Level is optional. If level is omitted the full path from start is returned.\n                               // path(\'/this/is/a/path\').sub(1,2).full() == \'/is/a/\'\n                               // path(\'/this/is/a/path/\').sub(1).full() == \'/is/a/path/\'\n    \n    mypath.exists()            // Returns true if file exists.\n    \n    mypath.stat()              // Returns the stat of path.\n                               // Equivalent of fs.statSync.\n    \n    mypath.newer(p)            // Returns true if p is newer than mypath.\n    \n> Both `exists`, `stat` and `newer` works asynchronously if a callback is supplied.\n\n### Enjoy!\n',
+18 silly publish   readmeFilename: 'README.md',
+18 silly publish   gitHead: '4f1686473414f4c66d29ad86afffd842c0fa2ba2',
+18 silly publish   bugs: { url: 'https://github.com/trenskow/pathier/issues' },
+18 silly publish   homepage: 'https://github.com/trenskow/pathier',
+18 silly publish   _id: 'pathier@0.0.2',
+18 silly publish   _shasum: '46e38ce809dea635aa28f5964990746d41208e46',
+18 silly publish   _from: '.' }
+19 silly mapToRegistry name pathier
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/pathier
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading /Users/trenskow/.npm/pathier/0.0.2/package.tgz
+25 verbose request uri https://registry.npmjs.org/pathier
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 06:36:05
+28 verbose request id 9fda96ebcd15ba47
+29 http request PUT https://registry.npmjs.org/pathier
+30 http 403 https://registry.npmjs.org/pathier
+31 verbose headers { date: 'Mon, 19 Jan 2015 05:36:06 GMT',
+31 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+31 verbose headers   'content-type': 'application/json',
+31 verbose headers   'cache-control': 'max-age=60',
+31 verbose headers   'content-length': '5611',
+31 verbose headers   'accept-ranges': 'bytes',
+31 verbose headers   via: '1.1 varnish',
+31 verbose headers   'x-served-by': 'cache-fra1237-FRA',
+31 verbose headers   'x-cache': 'MISS',
+31 verbose headers   'x-cache-hits': '0',
+31 verbose headers   'x-timer': 'S1421645765.906184,VS0,VE841',
+31 verbose headers   'keep-alive': 'timeout=10, max=50',
+31 verbose headers   connection: 'Keep-Alive' }
+32 verbose request invalidating /Users/trenskow/.npm/registry.npmjs.org/pathier on PUT
+33 error publish Failed PUT 403
+34 verbose stack Error: forbidden cannot modify pre-existing version: 0.0.2
+34 verbose stack old={"name":"pathier","version":"0.0.2","description":"A smarter node.js path.","author":{"name":"Kristian Trenskow","email":"trenskow@me.com"},"main":"./index.js","devDependencies":{"mocha":">= 1.20.0","chai":">= 1.9.1","touch":"~0.0.3"},"scripts":{"test":"./node_modules/mocha/bin/mocha ./test/*.js"},"repository":{"type":"git","url":"https://github.com/trenskow/pathier"},"keywords":["path"],"license":"BSD","gitHead":"8413a0eacf6f8e9397ed12a841be0fea88cec757","bugs":{"url":"https://github.com/trenskow/pathier/issues"},"homepage":"https://github.com/trenskow/pathier","_id":"pathier@0.0.2","_shasum":"e32f8ad4026554345bc691e70175a29b22a68176","_from":".","_npmVersion":"2.1.17","_nodeVersion":"0.10.35","_npmUser":{"name":"trenskow","email":"trenskow@me.com"},"maintainers":[{"name":"trenskow","email":"trenskow@me.com"}],"dist":{"shasum":"e32f8ad4026554345bc691e70175a29b22a68176","tarball":"http://registry.npmjs.org/pathier/-/pathier-0.0.2.tgz"}}
+34 verbose stack new={"name":"pathier","version":"0.0.2","description":"A smarter node.js path.","author":{"name":"Kristian Trenskow","email":"trenskow@me.com"},"main":"./index.js","devDependencies":{"mocha":">= 1.20.0","chai":">= 1.9.1","touch":"~0.0.3"},"scripts":{"test":"./node_modules/mocha/bin/mocha ./test/*.js"},"repository":{"type":"git","url":"https://github.com/trenskow/pathier"},"keywords":["path"],"license":"BSD","readme":"# pathier\u000a\u000aA Javascript path tool.\u000a\u000a## Usage\u000a\u000a### How to create\u000a\u000a    var path = require('pathier');\u000a    \u000a    var mypath = path('/this/is/my/path');\u000a    \u000a### How to use\u000a\u000a    mypath.full()              // Returns the path as a String.\u000a    \u000a    mypath.isAbsolute()        // Returns true if path is absolute.\u000a                               // path('/absolute/path').isAbsolute() == true\u000a    \u000a    mypath.isRelative()        // Returns true if path is relative\u000a                               // Opposite of isAbsolute().\u000a    \u000a    mypath.isFile()            // Returns true if path has no trailing '/'.\u000a                               // path('/this/is/a/file').isFile() == true\u000a                               // path('/this/is/a/directory/').isFile() == false\u000a    \u000a    mypath.isDirectory()       // Returns true if path has trailing '/'.\u000a                               // Opposite of isFile().\u000a    \u000a    mypath.isIn(p)             // Returns true of mypath is within p.\u000a                               // path('/this/is/a/path').isIn('/this/is') == true\u000a    \u000a    mypath.join(p)             // Returns a path with p appended to mypath.\u000a                               // path('/this/is/').join('/a/path').full() == '/this/is/a/path'\u000a    \u000a    mypath.relative(p)         // Returns a path with p relative to mypath.\u000a                               // path('/this/is/').relative('a/path').full() == '/this/is/a/path'\u000a                               // path('/this/is/').relative('/a/path).full() == '/a/path'\u000a    \u000a    mypath.path()              // Returns a new path with the path of mypath.\u000a                               // path('/this/is/a/file.ext').path().full() == '/this/is/a/'\u000a    \u000a    mypath.name()              // Returns the filename base name without extension.\u000a                               // path('/this/is/a/file.ext').base() == 'file'\u000a    \u000a    mypath.ext()               // Returns the filename extension.\u000a                               // path('/this/is/a/file.ext').ext() == 'ext'\u000a    \u000a    mypath.level()             // Returns the depth of the path.\u000a                               // path('/this/is/a/path/').level() == 4\u000a                               // path('/this/is/a/path').level() == 3\u000a    \u000a    mypath.sub(start, [level]) // Return a subpath.\u000a                               // Level is optional. If level is omitted the full path from start is returned.\u000a                               // path('/this/is/a/path').sub(1,2).full() == '/is/a/'\u000a                               // path('/this/is/a/path/').sub(1).full() == '/is/a/path/'\u000a    \u000a    mypath.exists()            // Returns true if file exists.\u000a    \u000a    mypath.stat()              // Returns the stat of path.\u000a                               // Equivalent of fs.statSync.\u000a    \u000a    mypath.newer(p)            // Returns true if p is newer than mypath.\u000a    \u000a> Both `exists`, `stat` and `newer` works asynchronously if a callback is supplied.\u000a\u000a### Enjoy!\u000a","readmeFilename":"README.md","gitHead":"4f1686473414f4c66d29ad86afffd842c0fa2ba2","bugs":{"url":"https://github.com/trenskow/pathier/issues"},"homepage":"https://github.com/trenskow/pathier","_id":"pathier@0.0.2","_shasum":"46e38ce809dea635aa28f5964990746d41208e46","_from":".","_npmVersion":"2.1.17","_nodeVersion":"0.10.35","_npmUser":{"name":"trenskow","email":"trenskow@me.com"},"maintainers":[{"name":"trenskow","email":"trenskow@me.com"}],"dist":{"shasum":"46e38ce809dea635aa28f5964990746d41208e46","tarball":"http://registry.npmjs.org/pathier/-/pathier-0.0.2.tgz"}}: pathier
+34 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:244:14)
+34 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+34 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:373:22)
+34 verbose stack     at Request.emit (events.js:98:17)
+34 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1318:14)
+34 verbose stack     at Request.emit (events.js:117:20)
+34 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1266:12)
+34 verbose stack     at IncomingMessage.emit (events.js:117:20)
+34 verbose stack     at _stream_readable.js:944:16
+34 verbose stack     at process._tickCallback (node.js:442:13)
+35 verbose statusCode 403
+36 verbose pkgid pathier
+37 verbose cwd /Users/trenskow/Desktop/appbreviate.com/app.risras.dk-admin/node_modules/pageflow/node_modules/pathier
+38 error Darwin 14.1.0
+39 error argv "node" "/usr/local/bin/npm" "publish"
+40 error node v0.10.35
+41 error npm  v2.1.17
+42 error code E403
+43 error forbidden cannot modify pre-existing version: 0.0.2
+43 error old={"name":"pathier","version":"0.0.2","description":"A smarter node.js path.","author":{"name":"Kristian Trenskow","email":"trenskow@me.com"},"main":"./index.js","devDependencies":{"mocha":">= 1.20.0","chai":">= 1.9.1","touch":"~0.0.3"},"scripts":{"test":"./node_modules/mocha/bin/mocha ./test/*.js"},"repository":{"type":"git","url":"https://github.com/trenskow/pathier"},"keywords":["path"],"license":"BSD","gitHead":"8413a0eacf6f8e9397ed12a841be0fea88cec757","bugs":{"url":"https://github.com/trenskow/pathier/issues"},"homepage":"https://github.com/trenskow/pathier","_id":"pathier@0.0.2","_shasum":"e32f8ad4026554345bc691e70175a29b22a68176","_from":".","_npmVersion":"2.1.17","_nodeVersion":"0.10.35","_npmUser":{"name":"trenskow","email":"trenskow@me.com"},"maintainers":[{"name":"trenskow","email":"trenskow@me.com"}],"dist":{"shasum":"e32f8ad4026554345bc691e70175a29b22a68176","tarball":"http://registry.npmjs.org/pathier/-/pathier-0.0.2.tgz"}}
+43 error new={"name":"pathier","version":"0.0.2","description":"A smarter node.js path.","author":{"name":"Kristian Trenskow","email":"trenskow@me.com"},"main":"./index.js","devDependencies":{"mocha":">= 1.20.0","chai":">= 1.9.1","touch":"~0.0.3"},"scripts":{"test":"./node_modules/mocha/bin/mocha ./test/*.js"},"repository":{"type":"git","url":"https://github.com/trenskow/pathier"},"keywords":["path"],"license":"BSD","readme":"# pathier\u000a\u000aA Javascript path tool.\u000a\u000a## Usage\u000a\u000a### How to create\u000a\u000a    var path = require('pathier');\u000a    \u000a    var mypath = path('/this/is/my/path');\u000a    \u000a### How to use\u000a\u000a    mypath.full()              // Returns the path as a String.\u000a    \u000a    mypath.isAbsolute()        // Returns true if path is absolute.\u000a                               // path('/absolute/path').isAbsolute() == true\u000a    \u000a    mypath.isRelative()        // Returns true if path is relative\u000a                               // Opposite of isAbsolute().\u000a    \u000a    mypath.isFile()            // Returns true if path has no trailing '/'.\u000a                               // path('/this/is/a/file').isFile() == true\u000a                               // path('/this/is/a/directory/').isFile() == false\u000a    \u000a    mypath.isDirectory()       // Returns true if path has trailing '/'.\u000a                               // Opposite of isFile().\u000a    \u000a    mypath.isIn(p)             // Returns true of mypath is within p.\u000a                               // path('/this/is/a/path').isIn('/this/is') == true\u000a    \u000a    mypath.join(p)             // Returns a path with p appended to mypath.\u000a                               // path('/this/is/').join('/a/path').full() == '/this/is/a/path'\u000a    \u000a    mypath.relative(p)         // Returns a path with p relative to mypath.\u000a                               // path('/this/is/').relative('a/path').full() == '/this/is/a/path'\u000a                               // path('/this/is/').relative('/a/path).full() == '/a/path'\u000a    \u000a    mypath.path()              // Returns a new path with the path of mypath.\u000a                               // path('/this/is/a/file.ext').path().full() == '/this/is/a/'\u000a    \u000a    mypath.name()              // Returns the filename base name without extension.\u000a                               // path('/this/is/a/file.ext').base() == 'file'\u000a    \u000a    mypath.ext()               // Returns the filename extension.\u000a                               // path('/this/is/a/file.ext').ext() == 'ext'\u000a    \u000a    mypath.level()             // Returns the depth of the path.\u000a                               // path('/this/is/a/path/').level() == 4\u000a                               // path('/this/is/a/path').level() == 3\u000a    \u000a    mypath.sub(start, [level]) // Return a subpath.\u000a                               // Level is optional. If level is omitted the full path from start is returned.\u000a                               // path('/this/is/a/path').sub(1,2).full() == '/is/a/'\u000a                               // path('/this/is/a/path/').sub(1).full() == '/is/a/path/'\u000a    \u000a    mypath.exists()            // Returns true if file exists.\u000a    \u000a    mypath.stat()              // Returns the stat of path.\u000a                               // Equivalent of fs.statSync.\u000a    \u000a    mypath.newer(p)            // Returns true if p is newer than mypath.\u000a    \u000a> Both `exists`, `stat` and `newer` works asynchronously if a callback is supplied.\u000a\u000a### Enjoy!\u000a","readmeFilename":"README.md","gitHead":"4f1686473414f4c66d29ad86afffd842c0fa2ba2","bugs":{"url":"https://github.com/trenskow/pathier/issues"},"homepage":"https://github.com/trenskow/pathier","_id":"pathier@0.0.2","_shasum":"46e38ce809dea635aa28f5964990746d41208e46","_from":".","_npmVersion":"2.1.17","_nodeVersion":"0.10.35","_npmUser":{"name":"trenskow","email":"trenskow@me.com"},"maintainers":[{"name":"trenskow","email":"trenskow@me.com"}],"dist":{"shasum":"46e38ce809dea635aa28f5964990746d41208e46","tarball":"http://registry.npmjs.org/pathier/-/pathier-0.0.2.tgz"}}: pathier
+44 error If you need help, you may report this error at:
+44 error     <http://github.com/npm/npm/issues>
+45 verbose exit [ 1, true ]
