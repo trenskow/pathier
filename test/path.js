@@ -30,7 +30,10 @@ describe('path', function() {
 		expect(path('/this/is').relative('/a/path').full()).to.be.equal('/a/path');
 	});
 	it ('should combine two relative paths', function() {
-		expect(path('../this/is/yet').relative('../another/path').full()).to.be.equal('../this/is/another/path');
+		expect(path('../this/is/yet/').relative('../another/path').full()).to.be.equal('../this/is/another/path');
+	});
+	it ('should combine relatively two paths', function() {
+		expect(path('/this/is/yet.ext').relative('./a/path').full()).to.be.equal('/this/is/a/path');
 	});
 	it ('should say it is relative', function() {
 		expect(path('relative/path').isRelative()).to.be.true;
@@ -99,22 +102,22 @@ describe('path', function() {
 		expect(path('/this/is/a/path').sub(0).full()).to.be.equal('/this/is/a/path');
 	});
 	it ('should come back with file existing (async)', function(done) {
-		path(__dirname).relative('../package.json').exists(function(exists) {
+		path(__dirname + '/').relative('../package.json').exists(function(exists) {
 			expect(exists).to.be.true;
 			done();
 		});
 	});
 	it ('should come back with file existing (sync)', function() {
-		expect(path(__dirname).relative('../package.json').exists()).to.be.true;
+		expect(path(__dirname + '/').relative('../package.json').exists()).to.be.true;
 	});
 	it ('should come back with file non-existing (async)', function(done) {
-		path(__dirname).relative('package.json').exists(function(exists) {
+		path(__dirname + '/').relative('package.json').exists(function(exists) {
 			expect(exists).to.be.false;
 			done();
 		});
 	});
 	it ('should come back with file non-existing (sync)', function() {
-		expect(path(__dirname).relative('package.json').exists()).to.be.false;
+		expect(path(__dirname + '/').relative('package.json').exists()).to.be.false;
 	});
 	it ('should come back with newer than older (async)', function(done) {
 		console.log('    [i] This test should take around 1.5 secs.')
