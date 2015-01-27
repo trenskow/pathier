@@ -2,6 +2,9 @@
 
 A Javascript path tool.
 
+----
+[![npm verion](https://badge.fury.io/js/pathier.svg)](https://www.npmjs.com/package/pathier)
+
 ## Usage
 
 ### How to create
